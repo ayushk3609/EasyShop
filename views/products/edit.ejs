@@ -1,0 +1,36 @@
+<%- include("../partials/header")  %>
+<%- include("../partials/navbar")  %>
+
+
+<div class="container" style="margin-top: 3rem; width: 80vw;">
+
+    <form class="validated-form" method="POST" action="/products/<%=product._id %>?_method=PATCH" style="max-width: 70%;margin: 10px auto;" novalidate>
+        <div class="mb-3 mt-3">
+            <label for="image" class="form-label" > Image url</label>
+            <input type="text" class="form-control" id="image" value="<%=product.image %>" placeholder="Product Image URL" name="product[image]" required>
+        </div>
+        <div class="mb-3 mt-2">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" value="<%=product.name %>" placeholder="Product Name" name="product[name]" required>
+        <div class="mb-3 mt-3">
+          <label for="price" class="form-label">Price in ₹</label>
+          <input type="number" class="form-control" id="price" value="<%=product.price %>" placeholder="Price in ₹" name="product[price]" required>
+        </div>
+        <div class="mb-5 mt-2">
+            <label for="desc" class="form-label">Description</label>
+            <textarea name="product[desc]" class="form-control" placeholder="Description" id="desc" cols="30" rows="5"><%= product.desc %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+<%- include("../partials/footer")  %>

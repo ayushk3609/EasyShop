@@ -1,0 +1,50 @@
+<%- include("../partials/header")  %>
+<link rel="stylesheet" href="css/login.css">
+
+
+<div class="container mx-auto login">
+    <form class="row g-3  validated-form" method="POST" action="/login"  novalidate>
+        <%- include("../partials/flash")  %>
+        <h5 class="display-5 text-center"><i class="fas fa-id-badge"></i></h5>
+        <h4 class="display-4 text-center mt-1">Log In</h4>
+            <div class="col-md-12">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" class="form-control inp" id="username" name="username" placeholder="User Name" required >
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </>
+            <div class="col-md-12 mt-2">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control inp" id="password" placeholder="Password" name="password" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-12 mt-5 text-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+    </form>
+    <div class="row mt-4 text-center" >
+        <div class="col-md-6 mt-1">
+            <a class="link" href="/register"  >New User? Sign Up</a>
+        </div>
+        <div class="col-md-6 mt-1">
+            <a class="link" href="/forgotpassword"  >Forgot Password</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("../partials/footer")  %>

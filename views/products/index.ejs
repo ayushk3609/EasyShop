@@ -1,0 +1,39 @@
+<%- include("../partials/header")  %>
+<%- include("../partials/navbar")  %>
+
+
+<link rel="stylesheet" href="css/index.css">
+
+<main class="container mt-1">
+  <%- include("../partials/flash")  %>
+  <%- include("../partials/carousel")  %>
+    <div class="row products mt-5">
+       <% for(let product of products){%>
+        <div class="col-lg-3 col-md-6">
+            <div class="card text-center product" style="width: 15.5rem;">
+                <img src="<%=product.image %>" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><b><%= product.name %></b></h5>
+                  <h5 class="card-title"><b> M.R.P.: <%= product.price %> ₹</b></h5>
+                  <div class="row">
+                    <div class="col-sm-6 mt-4">
+                      <a href="/products/<%= product._id %>" class="btn btn-outline-primary view" style="outline: none;">View</a>
+                    </div>
+                    <div class="col-sm-6 mt-4">
+                      <form action="/user/<%= product._id %>/cart" method="POST">
+                        <button class="btn btn-outline-primary buy">Buy Now</i></button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+        </div>
+       <% }%>
+    </div>
+  </main>
+
+
+<%- include("../partials/lfoot")  %>
+
+<%- include("../partials/footer")  %>

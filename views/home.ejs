@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyShop</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Federant&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+
+</head>
+<body>
+
+
+<div class="wrapper">
+    <header>
+        <div class="logo">
+           <h2 class='name'><i class="fab fa-opencart" style="font-size: 2rem;">&nbsp;</i>EasyShop</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/products">Products</a></li>
+                <li><a href="#">Contact</a></li>
+
+                <% if(!currentUser){  %>
+                <li><a  href="/login">Login</a></li>
+                <li><a class="btn" href="/register">Sign Up</a></li>
+                <% }else{ %>
+                <li><a class="btn" href="/logout">Logout</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+
+        <div class="text">
+            <h3>Shopping Made Easy</h3>
+            <br>
+            <p> Jump right in and explore our many products.
+                Feel free to add some of your own and comment on others!</p>
+            <a href="/products" class="btn">Explore</a>
+        </div>
+        <div class="img">
+            <div class="shop-icons">
+                <img src="https://res.cloudinary.com/heaven3609/image/upload/v1621544632/t-shirt_blbgs6.png" alt="">
+                <img src="https://res.cloudinary.com/heaven3609/image/upload/v1621544587/mob_b4lku5.png" alt="">
+                <img src="https://res.cloudinary.com/heaven3609/image/upload/v1621544596/shoes_hfm4nw.png" alt="">
+                <img src="https://res.cloudinary.com/heaven3609/image/upload/v1621544537/bag_tupwmz.png" alt="">
+                <img src="https://res.cloudinary.com/heaven3609/image/upload/v1621544552/camera_uxmjag.png" alt="">
+            </div>
+            <img class="shop-icon" src="https://res.cloudinary.com/heaven3609/image/upload/v1621544611/shop_wn2lei.png" alt="">
+        </div>
+    </div>
+
+<div class="wave">
+    <img src="https://res.cloudinary.com/heaven3609/image/upload/v1621544665/wave_jmumm7.svg" alt="">
+</div>
+
+</div>
+
+
+</body>
+</html>

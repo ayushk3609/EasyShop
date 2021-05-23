@@ -1,0 +1,101 @@
+<%- include("../partials/header")  %>
+<link rel="stylesheet" href="css/signup.css">
+
+
+<div class="container mx-auto" >
+    <form class="row g-3  validated-form" method="POST" action="/register" enctype='multipart/form-data' novalidate>
+        <%- include("../partials/flash")  %>
+        <h5 class="display-5 text-center"><i class="fas fa-user-plus text"></i></h5>
+        <h4 class="display-4 text-center mt-1">Sign Up</h4>
+        <div class="col-md-6">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" class="form-control inp " id="username" name="username" placeholder="User Name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control inp" id="password" placeholder="Password" name="password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control inp " id="firstName" name="firstName" placeholder="First Name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control inp " id="lastName" name="lastName" placeholder="Last Name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="mobNo" class="form-label">Mobile No.</label>
+            <input type="number" class="form-control inp" id="mobNo" name="mobNo" placeholder="Mobile No." required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Number.
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="profileImage" class="form-label">Choose an image for profile </label>
+            <input type="file" class="form-control inp" id="profileImage" name="profileImage">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control inp" id="email" name="email" placeholder="E-mail" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Email.
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="role" class="form-label">You're A </label>
+            <select class="form-select inp" aria-label="Default select example" name="role" required>
+                <option selected>Choose ...</option>
+                <option value="Customer">Customer</option>
+                <option value="Retailer">Retailer</option>
+            </select>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please Choose one.
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="Address" class="form-label">Address</label>
+            <textarea class="form-control inp" placeholder="Address" name="Address" id="address" cols="0" rows="1" required></textarea>
+        </div>
+        <div class="col-lg-12 text-center">
+        <button type="submit" class="btn btn-primary mt-4">Register</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("../partials/footer")  %>

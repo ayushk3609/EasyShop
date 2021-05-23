@@ -1,0 +1,64 @@
+.image{
+    width:28rem;
+    height:28rem;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: 700ms;
+    -webkit-transition: 700ms;
+    -moz-transition: 700ms;
+    -ms-transition: 700ms;
+    -o-transition: 700ms;
+}
+
+ .image:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.content{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    border: none;
+    font-family: 'Roboto Slab', serif
+}
+
+.btn{
+    width: 100%;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    transition: 200ms;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -ms-transition: 200ms;
+    -o-transition: 200ms;
+}
+
+.buy{
+    background-color: #ffba08;
+}
+.buy:hover{
+    background-color: #ebab08;
+}
+
+.cart{
+    background-color: #ee7f18;
+}
+.cart:hover{
+    background-color: #d87416;
+}
+
+.btn:hover{
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}

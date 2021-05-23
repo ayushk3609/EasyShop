@@ -1,0 +1,80 @@
+<%- include("../partials/header")  %>
+<%- include("../partials/navbar")  %>
+
+<div class="mx-auto mt-3 w-25" >
+  <%- include("../partials/flash")  %>
+  <h2 class="text-center"> EasyCart</h2>
+  <h1 class="text-center"><i class="fas fa-shopping-bag"></i></h1>
+</div>
+<div class="container" style="margin-top: 5rem;">
+ <% if(currentUser.cart.length == 0){ %>
+    <div class="col-lg-8 mx-auto" style="margin-top: 35vh;" >
+      <h1 class="text-center"> Your Cart Is Empty </h1>
+      <h1 class="text-center" style="font-size: 5rem;"><i class="fas fa-wind"></i></h1>
+    </div>
+ <% }else{ %>
+    <div class="row">
+        <div class="col-lg-8">
+            <% for(let item of userCart){%>
+                <div class="card mb-3" style="width:50vw">
+                 <div class="row no-gutters">
+                   <div class="col-md-6">
+                     <img src="<%= item.image %>" class="card-img" alt="...">
+                   </div>
+                   <div class="col-md-6">
+                     <div class="card-body">
+                       <h3 class="card-title"><%= item.name %></h3>
+                       <h5 class="card-title">M.R.P. : <%= item.price %> &#8377;</h5>
+                       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                       <div>
+                         <form action="/user/<%= currentUser._id %>/cart/<%= item._id %>?_method=DELETE" method="POST">
+                           <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        </form>
+                       </div>
+                      </div>
+                   </div>
+                 </div>
+               </div>
+             <% } %>
+             <div><a href="/products" class="btn btn-success"> <i class="fas fa-arrow-left"></i>  &nbsp;Continue Shopping </a></div>
+        </div>
+        <div class="col-md-4">
+            <h6 class="display-6">Products</h6>
+            <% totalAmount = 0 %>
+            <ul class="list-group"></ul>
+            <% for(let item of userCart){ %>
+                <li class="list-group-item"><%= item.name %> - <b class="text-right"><%= item.price %> &#8377;</b></li>
+                <% totalAmount+=item.price %>
+            <% } %>
+            <li class="list-group-item"><b> Sub-Total : <%= totalAmount %>  &#8377; </b></li>
+            </ul>
+            <div class="mt-3">
+            <form action="/payment_gateway/payumoney" method="post">
+            <input type="hidden" class="amount" name="amount" value="<%= totalAmount %>" />
+            <input type="hidden" class="con" name="phone" value="<%= currentUser.mobNo %>"/>
+            <input type="hidden" class="email" name="email" value="<%= currentUser.email %>"/>
+            <input type="hidden" class="firstname" name="firstname" value="<%= currentUser.firstName %>"/>
+            <input type="hidden" name="service_provider" value="payu_paisa" />
+            <input type="hidden" class="product" name="productinfo" value="educational purpose"/>
+            <p><button class="btn btn-success btn-md btn-block " style="background-color:#03045e;">Proceed to Payment</button></p>
+            </form>
+            </div>
+        </div>
+    </div>
+<% } %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("../partials/lfoot")  %>
+<%- include("../partials/footer")  %>

@@ -1,0 +1,57 @@
+body{
+    background: rgb(83,83,84);
+    background: linear-gradient(90deg, rgba(83,83,84,1) 0%, rgba(217,217,224,0.7847338764607406) 51%, rgba(82,84,84,1) 100%); 
+}
+
+.container{
+    
+    padding: 40px;
+    margin-top: 4rem;
+    width: 30vw;
+    background: rgba( 16, 1, 1, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 17.0px );
+    -webkit-backdrop-filter: blur( 17.0px );
+    border-radius: 10px;
+}
+
+@media (max-width:968px){
+    .container{
+        width:50vw
+    }
+}
+
+@media (max-width:605px){
+    .container{
+        width:80vw
+    }
+}
+
+.inp{
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.login .btn{
+    width:50%;
+    background-color: black;
+    border-color: black;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+
+.link{
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: whitesmoke;
+}
