@@ -9,17 +9,17 @@ const Order = require('../models/order');
 
 router.post('/payment_gateway/payumoney',isLoggedIn,(req,res)=>{
     req.body.txnid = uniqid.process()
-    req.body.email = req.user.email
-    req.body.firstname = req.user.firstName
+    req.body.email = req.user.email;
+    req.body.firstname = req.user.firstName;
 
     const pay = req.body
 
     const hashString = process.env.MERCHANT_KEY //store in in different file
      + '|' + pay.txnid
-     + '|' + pay.amount 
-     + '|' + pay.productinfo 
-     + '|' + pay.firstname 
-     + '|' + pay.email 
+     + '|' + pay.amount
+     + '|' + pay.productinfo
+     + '|' + pay.firstname
+     + '|' + pay.email
      + '|' + '||||||||||'
      + process.env.MERCHANT_SALT //store in in different file
 
@@ -33,7 +33,7 @@ router.post('/payment_gateway/payumoney',isLoggedIn,(req,res)=>{
 
      pay.key = process.env.MERCHANT_KEY //store in in different file;
      pay.surl = 'https://easyshop303.herokuapp.com/payment/success';
-     pay.furl = 'https://easyshop303.herokuapp.com/fail';
+     pay.furl = 'https://easyshop303.herokuapp.com/payment/fail';
      pay.hash = hash;
 
      //Making an http/https call with request
