@@ -12,7 +12,7 @@ router.post('/payment_gateway/payumoney',isLoggedIn,(req,res)=>{
     req.body.email = req.user.email;
     req.body.firstname = req.user.firstName;
 
-    const pay = req.body
+    const pay = req.body;
 
     const hashString = process.env.MERCHANT_KEY //store in in different file
      + '|' + pay.txnid
