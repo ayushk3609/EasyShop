@@ -87,12 +87,14 @@
                                 </p>
                                 <p style="color: gray;">By <%=review.user%></p>
                                 <p class="card-text">Review : <%=review.comment%></p>
-                               <% if(currentUser.username === review.user){ %>
-                                  <div>
-                                    <form action="/products/<%= product._id %>/review/<%= review._id %>?_method=DELETE" method="POST">
-                                      <button class="btn btn-danger">Delete</button>
-                                    </form>
-                                  </div>
+                                <% if(currentUser){ %>
+                                  <% if(currentUser.username === review.user){ %>
+                                      <div>
+                                        <form action="/products/<%= product._id %>/review/<%= review._id %>?_method=DELETE" method="POST">
+                                          <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                      </div>
+                                  <% } %>
                                 <% } %>
                             </div>
                         </div>
