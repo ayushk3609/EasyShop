@@ -43,6 +43,7 @@ router.put('/forgotpassword',async(req,res)=>{
         your password will remain unchanged.`,
     }
     await sgMail.send(msg)
+    req.flash('success',`'An Email has sent to ${email}`)
     console.log('An Email has sent to '+email)
     res.redirect('/forgotpassword')
 })
