@@ -7,11 +7,10 @@
   .separator--line {
     border: 0;
     border-bottom: 5px solid #0611446e;
-    position: relative;
-    text-align: center;
     width: 0;
-    animation: separator-width 1s ease-out forwards;
-  }
+    animation: separator-width 2s ease-out infinite forwards;
+    -webkit-animation: separator-width 2s ease-out infinite forwards;
+}
   @keyframes separator-width {
     0% {
       width: 0;
