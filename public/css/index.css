@@ -1,23 +1,8 @@
-.separator {
-    margin-top:8px ;
-    margin-bottom: 80px;
-    border: 0;
-  }
-
-  .separator--line {
-    border: 0;
-    border-bottom: 5px solid #0611446e;
-    width: 0;
-    animation: separator-width 2s ease-out infinite forwards;
-    -webkit-animation: separator-width 2s ease-out infinite forwards;
-}
-  @keyframes separator-width {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
+.leaf {
+  background: url('https://res.cloudinary.com/heaven3609/image/upload/v1622268386/pngjoy.com_decorative-horizontal-line-hr-style-css-hd-png_1119931_hojmq7.png') no-repeat top center;
+  height:70px;
+  border:none !important;
+  margin-top: 0;
   }
 
 
