@@ -7,7 +7,7 @@ const util = require('util')
 const crypto = require('crypto')
 
 
-sgMail.setApiKey(process.env.SGMAIL_APIKEY)
+sgMail.setApiKey("process.env.SGMAIL_APIKEY")
 
 
 router.get('/forgotpassword',(req,res)=>{
