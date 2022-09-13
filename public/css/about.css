@@ -380,6 +380,17 @@ section{
    
 }
 
+.Java{
+    box-shadow:  linear-gradient(to right, green 50%);
+  -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+.Java:hover{
+    box-shadow: 700px 0px green inset;
+}
+
 
 
 /* Projects */
