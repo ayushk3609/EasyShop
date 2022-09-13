@@ -388,9 +388,74 @@ section{
 }
 
 .Java:hover{
-    box-shadow: 100px 0px green inset;
+    box-shadow: 70px 0px green inset;
 }
 
+.MongoDB{
+    box-shadow:  linear-gradient(to right, green 50%);
+  -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+.MongoDB:hover{
+    box-shadow: 50px 0px green inset;
+}
+
+.NodeJs{
+    box-shadow:  linear-gradient(to right, green 50%);
+  -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+.NodeJs:hover{
+    box-shadow: 40px 0px green inset;
+}
+
+.ExpressJs{
+    box-shadow:  linear-gradient(to right, green 50%);
+  -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+.ExpressJs:hover{
+    box-shadow: 40px 0px green inset;
+}
+
+.React{
+    box-shadow:  linear-gradient(to right, green 50%);
+  -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+.React:hover{
+    box-shadow: 150px 0px green inset;
+}
+
+.Bootstrap{
+    box-shadow:  linear-gradient(to right, green 50%);
+  -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+.Bootstrap:hover{
+    box-shadow: 140px 0px green inset;
+}
+
+.Javascript{
+    box-shadow:  linear-gradient(to right, green 50%);
+  -webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+.Javascript:hover{
+    box-shadow: 160px 0px green inset;
+}
 
 
 /* Projects */
