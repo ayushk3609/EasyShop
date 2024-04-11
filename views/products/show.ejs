@@ -1,108 +1,122 @@
-<%- include("../partials/header")  %>
-<%- include("../partials/navbar")  %>
+<%- include("../partials/header") %>
+  <%- include("../partials/navbar") %>
 
 
-<link rel="stylesheet" href="/css/star.css">
-<link rel="stylesheet" href="/css/show.css">
+    <link rel="stylesheet" href="/css/star.css">
+    <link rel="stylesheet" href="/css/show.css">
 
-<div class="container mt-3">
-    <%- include("../partials/flash")  %>
-    <div class="row">
-        <div class="col-lg-6">
+    <div class="container mt-3">
+      <%- include("../partials/flash") %>
+        <div class="row">
+          <div class="col-lg-6">
             <div class="card image" style="background-image:url('<%=product.image %>');">
             </div>
-        </div>
-        <div class="col-lg-6 ">
+          </div>
+          <div class="col-lg-6 ">
             <div class="card content" style="width: 40rem;">
-                <div class="card-body">
-                  <h5 class="card-title fs-2"><b><%= product.name %></b></h5>
-                  <h5 class="card-title mt-2"><b> M.R.P.:  <%= product.price %> ₹ &nbsp;<i class="fas fa-tags"></i></b></h5>
-                  <h6 class="card-title mt-4" style="color: gray;"><i class="fas fa-truck"></i> &nbsp;From : <%= product.retailName %></h6>
-                  <p class="card-text mt-3"><%- product.desc %></p>
-                  <div class="container mt-5">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <a href="/user/<%= product._id %>/cart" class="btn  mt-3 fs-4 buy"><b> Buy</b></a>
-                      </div>
-                      <div class="col-lg-6">
-                          <form action="/user/<%= product._id %>/cart" method="POST">
-                            <button class="btn  mt-3 fs-4 cart"><b>Add to Cart</b></button>
-                          </form>
-                      </div>
+              <div class="card-body">
+                <h5 class="card-title fs-2"><b>
+                    <%= product.name %>
+                  </b></h5>
+                <h5 class="card-title mt-2"><b> M.R.P.: <%= product.price %> ₹ &nbsp;<i class="fas fa-tags"></i></b>
+                </h5>
+                <h6 class="card-title mt-4" style="color: gray;"><i class="fas fa-truck"></i> &nbsp;From : <%=
+                    product.retailName %>
+                </h6>
+                <p class="card-text mt-3"><%- product.desc %></p>
+                <div class="container mt-5">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <form action="/user/<%= product._id %>/cart" method="POST">
+                        <button class="btn  mt-3 fs-4 buy"><b> Buy</b></button>
+                      </form>
                     </div>
+                    <div class="col-lg-6">
+                      <form action="/user/<%= product._id %>/cart" method="POST">
+                        <button class="btn  mt-3 fs-4 cart"><b>Add to Cart</b></button>
+                      </form>
+                    </div>
+                  </div>
                   <% if(currentUser){ %>
-                    <% if(currentUser.role === "Retailer" && product.retailName === currentUser.username){ %>
+                    <% if(currentUser.role==="Retailer" && product.retailName===currentUser.username){ %>
                       <div class="row">
                         <div class="col-sm">
                           <a href="/products/<%=product._id %>/edit" class="btn btn-primary mt-3 fs-4"><b>Edit</b> </a>
                         </div>
                         <div class="col-sm">
                           <form action="/products/<%=product._id %>?_method=DELETE" method="POST">
-                              <button class="btn btn-danger mt-3 fs-4"><b>Delete</b> </button>
+                            <button class="btn btn-danger mt-3 fs-4"><b>Delete</b> </button>
                           </form>
                         </div>
                       </div>
                       <% } %>
-                    <% } %>
-                  </div>
+                        <% } %>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 float-right mt-5">
+        <div class="row">
+          <div class="col-lg-6 float-right mt-5">
             <h2>Leave a Review</h2>
-            <form class="validated-form mt-3" action="/products/<%=product._id %>/review" method="POST" style="max-width: 70%;" novalidate>
-                    <!-- <div class="mb3">
+            <form class="validated-form mt-3" action="/products/<%=product._id %>/review" method="POST"
+              style="max-width: 70%;" novalidate>
+              <!-- <div class="mb3">
                         <label for="rating" class="form-label">Rating</label>
                         <input type="range" class="form-range" min="0" max="5" name="rating" id="rating">
                     </div> -->
 
-                    <fieldset class="starability-basic ">
-                        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
-                        <input type="radio" id="first-rate1" name="rating" value="1" />
-                        <label for="first-rate1" title="Terrible">1 star</label>
-                        <input type="radio" id="first-rate2" name="rating" value="2" />
-                        <label for="first-rate2" title="Not good">2 stars</label>
-                        <input type="radio" id="first-rate3" name="rating" value="3" />
-                        <label for="first-rate3" title="Average">3 stars</label>
-                        <input type="radio" id="first-rate4" name="rating" value="4" />
-                        <label for="first-rate4" title="Very good">4 stars</label>
-                        <input type="radio" id="first-rate5" name="rating" value="5" />
-                        <label for="first-rate5" title="Amazing">5 stars</label>
-                      </fieldset>
-                    <div class="mb-4 mt-2">
-                        <label for="comment" class="form-label">Comment</label>
-                        <textarea name="comment" class="form-control" placeholder="Leave a review" id="desc" cols="20" rows="3" required></textarea>
-                    </div>
-                    <button type="submit" class="btn  btn-success">Submit</button>
+              <fieldset class="starability-basic ">
+                <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked
+                  aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="rating" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="rating" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="rating" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="rating" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="rating" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+              </fieldset>
+              <div class="mb-4 mt-2">
+                <label for="comment" class="form-label">Comment</label>
+                <textarea name="comment" class="form-control" placeholder="Leave a review" id="desc" cols="20" rows="3"
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn  btn-success">Submit</button>
             </form>
             <div class="mb-3 mt-3">
-                <%for(let review of product.reviews){%>
-                    <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Rating : <%=review.rating%></h5>
-                                <p class="starability-result" data-rating="<%= review.rating  %>">
-                                  Rated: <%= review.rating  %> stars
-                                </p>
-                                <p style="color: gray;">By <%=review.user%></p>
-                                <p class="card-text">Review : <%=review.comment%></p>
-                                <% if(currentUser){ %>
-                                  <% if(currentUser.username === review.user){ %>
-                                      <div>
-                                        <form action="/products/<%= product._id %>/review/<%= review._id %>?_method=DELETE" method="POST">
-                                          <button class="btn btn-danger">Delete</button>
-                                        </form>
-                                      </div>
-                                  <% } %>
-                                <% } %>
-                            </div>
+              <%for(let review of product.reviews){%>
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Rating : <%=review.rating%>
+                    </h5>
+                    <p class="starability-result" data-rating="<%= review.rating  %>">
+                      Rated: <%= review.rating %> stars
+                    </p>
+                    <p style="color: gray;">By <%=review.user%>
+                    </p>
+                    <p class="card-text">Review : <%=review.comment%>
+                    </p>
+                    <% if(currentUser){ %>
+                      <% if(currentUser.username===review.user){ %>
+                        <div>
+                          <form action="/products/<%= product._id %>/review/<%= review._id %>?_method=DELETE"
+                            method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                          </form>
                         </div>
+                        <% } %>
+                          <% } %>
+                  </div>
+                </div>
                 <%}%>
-           </div>
+            </div>
+          </div>
         </div>
     </div>
-</div>
 
 
 
@@ -119,5 +133,5 @@
 
 
 
-<%- include("../partials/lfoot")  %>
-<%- include("../partials/footer")  %>
+    <%- include("../partials/lfoot") %>
+      <%- include("../partials/footer") %>

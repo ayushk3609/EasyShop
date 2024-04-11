@@ -9,7 +9,9 @@ const userSchema = new mongoose.Schema({
         required:true,
         unique:true
     },
-    profileImage:String,
+    profileImage:{
+        type: String
+    },
     role:{
         type:String,
         required:true

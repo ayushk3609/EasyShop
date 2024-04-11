@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Product = require('./product')
 
-const paymentSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
     txnid:{
         type:String,
         required:true,
@@ -23,6 +23,6 @@ const paymentSchema = new mongoose.Schema({
     ]
 })
 
-const Order = mongoose.model('Order',paymentSchema)
+const Order = mongoose.model('Order',orderSchema)
 
 module.exports = Order
