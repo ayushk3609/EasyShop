@@ -12,15 +12,18 @@ const User = require('./models/user')
 
 const dotenv = require('dotenv')
 dotenv.config()
+console.log(process.env.DB_URL)
+
 
 const productRoutes = require('./routes/product')
 const authRoutes = require('./routes/auth')
 const cartRoutes = require('./routes/cart')
-const fpRoutes = require('./routes/forgotpassword')
 const paymentRoutes = require('./routes/payment')
 const userRoutes = require('./routes/user')
 
-mongoose.connect(process.env.DB_URL, {
+const DB_URL = process.env.DB_URL
+
+mongoose.connect(DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify:false,
@@ -77,7 +80,6 @@ app.get("/about", (req, res) => {
 app.use(productRoutes)
 app.use(authRoutes)
 app.use(cartRoutes)
-app.use(fpRoutes)
 app.use(paymentRoutes);
 app.use(userRoutes)
 

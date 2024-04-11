@@ -10,7 +10,7 @@ const products = [
         desc:'The iPhone 12 is a dual-SIM (GSM and GSM) mobile in which you can use both Nano-SIM and eSIM cards. The smartphone runs iOS 14 and has an inbuilt storage of 64GB so that you can store all your local files, songs, videos, pictures, docs and more without any space constraints. <br> In addition to this, the smartphone from Apple houses a non-removable battery that supports both wireless and proprietary fast charging.<br>&nbsp;&nbsp;Speaking about the camera specifications, the iPhone 12 on the rear features a 12 MP primary camera with f/1.6 aperture and a 12 MP camera with f/2.4 aperture. Also, the rear setup has autofocus feature. While on the front, the mobile comes with a 12 MP camera with f/2.2 aperture for clicking some awesome selfies.<br>On iPhone 12, you get various connectivity options such as Wi-Fi 802.11 a/b/g/n/ac/Yes, Lightning, Bluetooth v5.00, NFC, GPS, 3G, and 4G (with support for Band 40 used by some LTE networks in India). Sensors on the smartphone include proximity sensor, ambient light sensor, barometer, accelerometer, gyroscope, and compass/ magnetometer. Also, there is face unlock with 3D face recognition for security purpose.'
     },
     {
-        image:'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MX8E2_VW_34FR+watch-44-alum-spacegray-nc-nike6s_VW_34FR_WF_CO_GEO_IN?wid=750&hei=712&trim=1,0&fmt=p-jpg&qlt=80&.v=1599017871000,1601923999000',
+        image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4G7HOqcCDlPY2EncIwWJFW7rPPXZt2Nwlmg&s',
         name:'Apple watch',
         price:60000,
         retailName:'all_in_one',
