@@ -12,7 +12,6 @@ const User = require('./models/user')
 
 const dotenv = require('dotenv')
 dotenv.config()
-console.log(process.env.DB_URL)
 
 
 const productRoutes = require('./routes/product')
